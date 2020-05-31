@@ -34,8 +34,8 @@ class Main extends React.Component {
   };
 
   render() {
-    const nav = <header>{this.renderNav()}</header>;
-    const content = <main>{this.renderContent()}</main>;
+    const nav = <header key="nav">{this.renderNav()}</header>;
+    const content = <main key="content">{this.renderContent()}</main>;
 
     const { showOnTop } = this.props;
     return (
