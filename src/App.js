@@ -37,7 +37,7 @@ class App extends React.Component {
     ];
     return (
       <div>
-        <Main data={data} />
+        <Main data={data} showOnTop={true} />
       </div>
     );
   }

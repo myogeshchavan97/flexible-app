@@ -34,10 +34,13 @@ class Main extends React.Component {
   };
 
   render() {
+    const nav = <header>{this.renderNav()}</header>;
+    const content = <main>{this.renderContent()}</main>;
+
+    const { showOnTop } = this.props;
     return (
       <React.Fragment>
-        <header>{this.renderNav()}</header>
-        <main>{this.renderContent()}</main>
+        {showOnTop ? [nav, content] : [content, nav]}
       </React.Fragment>
     );
   }
