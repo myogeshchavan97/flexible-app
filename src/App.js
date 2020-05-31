@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Main from './components/Main';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const HomePage = () => (
+  <React.Fragment>
+    <p>This is Home page content</p>
+  </React.Fragment>
+);
+
+const ContactPage = () => (
+  <React.Fragment>
+    <p>This is Contact page content</p>
+  </React.Fragment>
+);
+
+const AboutPage = () => (
+  <React.Fragment>
+    <p>This is About page content</p>
+  </React.Fragment>
+);
+
+class App extends React.Component {
+  render() {
+    const data = [
+      {
+        label: 'Home',
+        content: <HomePage />
+      },
+      {
+        label: 'Contact',
+        content: <ContactPage />
+      },
+      {
+        label: 'About',
+        content: <AboutPage />
+      }
+    ];
+    return (
+      <div>
+        <Main data={data} />
+      </div>
+    );
+  }
 }
 
 export default App;

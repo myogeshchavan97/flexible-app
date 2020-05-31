@@ -1,0 +1,75 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Nunito, Helvetica Neue, Helvetica, sans-serif;
+  font-size: 20px;
+  background: #c1a5a5;
+  color: #664f4f;
+  padding: 1rem;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .links {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: inherit;
+    margin-top: 3rem;
+
+    .link:link,
+    .link:visited {
+      outline: none;
+      color: #000;
+      margin: 1rem;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .link:hover,
+    .link:active {
+      border-bottom: 2px solid #fff;
+    }
+  }
+}
+
+main {
+  width: 60%;
+  margin: 5rem auto 0 auto;
+}
+
+.active {
+  font-weight: bold;
+  box-shadow: 0 0 0.5rem #000;
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    .links {
+      .link:link,
+      .link:visited {
+        display: block;
+      }
+
+      .link:hover,
+      .link:active {
+        border-bottom: 2px solid transparent;
+      }
+    }
+  }
+
+  main {
+    width: 100%;
+  }
+}
