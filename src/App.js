@@ -13,6 +13,12 @@ const ContactPage = () => (
   </React.Fragment>
 );
 
+const DownloadsPage = () => (
+  <React.Fragment>
+    <p>This is Downloads page content</p>
+  </React.Fragment>
+);
+
 const AboutPage = () => (
   <React.Fragment>
     <p>This is About page content</p>
@@ -31,13 +37,23 @@ class App extends React.Component {
         content: <ContactPage />
       },
       {
+        label: 'Downloads',
+        content: <DownloadsPage />
+      },
+      {
         label: 'About',
         content: <AboutPage />
       }
     ];
+
+    const isPremiumUser = false;
     return (
       <div>
-        <Main data={data} showOnTop={false} />
+        <Main
+          data={data}
+          showOnTop={true}
+          menuToDisable={!isPremiumUser ? 'Downloads' : ''}
+        />
       </div>
     );
   }
