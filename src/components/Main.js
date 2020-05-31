@@ -12,14 +12,19 @@ class Main extends React.Component {
   };
 
   renderNav = () => {
+    const { menuToDisable } = this.props;
     return (
       <div className="links">
         {this.props.data.map((item, index) => (
           <a
             key={index}
             href="/#"
-            className="link"
-            onClick={() => this.setSelectedIndex(index)}
+            className={`${
+              item.label === menuToDisable ? 'link disabled' : 'link'
+            }`}
+            onClick={() =>
+              item.label === menuToDisable ? null : this.setSelectedIndex(index)
+            }
           >
             {item.label}
           </a>
